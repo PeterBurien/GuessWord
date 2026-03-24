@@ -26,7 +26,7 @@ namespace GuessWord
         public DifficultyType ChooseDifficulty()
         {
             Console.WriteLine("Choose difficulty: \n"+
-                              "1 - Easy\n"+
+                              "1 - EasyBreezy\n"+
                               "2 - Normal\n"+
                               "3 - Hard");
 
@@ -37,7 +37,7 @@ namespace GuessWord
                 switch (inputDifficulty)
                 {
                     case "1":
-                        return DifficultyType.Easy;
+                        return DifficultyType.EasyBreezy;
                     case "2":
                         return DifficultyType.Normal;
                     case "3":

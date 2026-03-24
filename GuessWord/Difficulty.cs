@@ -10,7 +10,7 @@
             
             switch(type)
             {
-                case DifficultyType.Easy:
+                case DifficultyType.EasyBreezy:
                     Attempts = 10;
                     MinWordLength = 3;
                     MaxWordLength = 5;
@@ -36,7 +36,7 @@
     }
     public enum DifficultyType
     {
-        Easy,
+        EasyBreezy,
         Normal,
         Hard
     }
