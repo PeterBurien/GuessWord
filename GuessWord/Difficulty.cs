@@ -10,18 +10,18 @@
             
             switch(type)
             {
-                case DifficultyType.Easy:
-                    Attempts = 10;
+                case DifficultyType.EasyBreezy:
+                    Mistakes = 7;
                     MinWordLength = 3;
                     MaxWordLength = 5;
                     break;
                 case DifficultyType.Normal:
-                    Attempts = 8;
+                    Mistakes = 6;
                     MinWordLength = 4;
                     MaxWordLength = 6;
                     break;
                 case DifficultyType.Hard:
-                    Attempts = 6;
+                    Mistakes = 5;
                     MinWordLength = 5;
                     MaxWordLength = 7;
                     break;
@@ -29,14 +29,14 @@
             }
         }
         
-    public int Attempts { get; private set; }    
+    public int Mistakes { get; private set; }    
     public int MinWordLength { get; private set; }    
     public int MaxWordLength { get; private set; }    
 
     }
     public enum DifficultyType
     {
-        Easy,
+        EasyBreezy,
         Normal,
         Hard
     }

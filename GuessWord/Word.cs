@@ -11,6 +11,8 @@ namespace GuessWord
         {
             _value = value;
         }
+        
+        public string Value => _value;
 
         public int Length => _value.Length;
 

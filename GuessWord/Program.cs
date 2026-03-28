@@ -22,15 +22,11 @@ namespace GuessWord
                 char letter = ui.InputLetter();
                 game.Guess(letter);
             }
-            
-            if (game.IsWon) 
-                Console.WriteLine("Congratulations! You won the game!");
-            else
-                Console.WriteLine("You lost the game! Better luck next time!");
+
+            ui.ShowGameResult(game.IsWon, game.Word.Value);
         }
     }
 }
-         
-            
+
             
 

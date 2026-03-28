@@ -1,39 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GuessWord
 {
     public class WordBank
     {
-        private Word[] _words;
-
-        public WordBank()
+        private List<string> _allWords = new List<string>()
+        
         {
-            _words = new[]
-            {
-                new Word("pet"),
-                new Word("home"),
-                new Word("dog"),
-                new Word("cat"),
-                new Word("cock"),
-                new Word("rock"),
-                new Word("hogwarts"),
-                new Word("magic"),
-                new Word("wond"),
-                new Word("giant"),
-                new Word("leviosa"),
-                new Word("secret"),
+            "dog", "cup", "winter", "ball", "money", "bus", "statement", "flower", "book",
+            "scandal", "purse", "pillow", "laptop", "lightning", "shirt", "serenity", 
+            "punishment", "pool", "wedding", "husband"
 
-            };
-        }
+        };
+        
+        private Random _random = new Random();
 
         public Word Generate(Difficulty difficulty)
         {
-            var words = _words.Where(word => word.Length >= difficulty.MinWordLength &&
-                                           word.Length <= difficulty.MaxWordLength).ToArray();
-            var random = new Random();
-            int index = random.Next(words.Length);
-            return words[index];
+            var suitable = new List<string>();
+
+            foreach (var word in _allWords)
+            {
+                if (word.Length >= difficulty.MinWordLength && word.Length <= difficulty.MaxWordLength)
+                    suitable.Add(word);
+            }
+
+            if (suitable.Count == 0)
+                return new Word(_allWords[_random.Next(_allWords.Count)]);
+
+            return new Word(suitable[_random.Next(suitable.Count)]);
         }
     }
 }

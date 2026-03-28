@@ -16,7 +16,7 @@ namespace GameWord
         {
             Difficulty = difficulty;
             Word = word;
-            AttemptsLeft = difficulty.Attempts;
+            AttemptsLeft = difficulty.Mistakes;
             _guessedLetters = new HashSet<char>();
         }
 
