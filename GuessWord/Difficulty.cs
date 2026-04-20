@@ -29,15 +29,21 @@
             }
         }
         
+    }
+   public class Difficulty
+{
+    public string Name { get; private set; }
     public int Attempts { get; private set; }    
-    public int MinWordLength { get; private set; }    
-    public int MaxWordLength { get; private set; }    
+    public int MaxAttempts { get; private set; }
+    public int MinWordLength { get; private set; }
+    public int MaxWordLength { get; private set; }
 
-    }
-    public enum DifficultyType
+    public Difficulty(string name, int maxAttempts, int minWordLength, int maxWordLength)
     {
-        Easy,
-        Normal,
-        Hard
+        Name = name;
+        MaxAttempts = maxAttempts;
+        MinWordLength = minWordLength;
+        MaxWordLength = maxWordLength;
     }
+}
 }

@@ -26,21 +26,5 @@ namespace GameWord
         public bool IsWon => !Mask.Contains("*");
         public bool IsLost => AttemptsLeft <= 0;
 
-        public void Guess(char letter)
-        {
-            bool isGuessed = _guessedLetters.Add(letter);
-
-            if (!isGuessed)
-            {
-                Console.WriteLine("you already entered this letter");
-                return;
-            }
-
-            if (!Word.Contains(letter))
-            {
-                AttemptsLeft--;
-                Console.WriteLine("Wrong letter. Minus 1 attempt");
-            }
-        }
     }
 }
